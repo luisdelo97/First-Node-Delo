@@ -130,3 +130,42 @@ import router from "./routes/index.js";
 //agrega el router a la app
 app.use("/", router);
 ```
+
+# Utilizando el template engine **PUG**
+
+Un template engine es una herramienta que permite generar contenido dinámico en páginas web mediante la combinación de plantillas predefinidas y datos variables. Ayuda a separar la lógica de presentación de la lógica de negocio, facilitando el desarrollo y mantenimiento de aplicaciones web al reutilizar y actualizar fácilmente las plantillas.
+
+instalamoa PUG desde la consola via npm con el comando `npm i pug` como una dependencia de produccion y no de desarrollo
+
+```js
+"dependencies": {
+    "express": "^4.18.2",
+    "pug": "^3.0.2"
+  },
+```
+
+habilitamos pug en el indx de la app
+
+```js
+// habilitar pug
+app.set("view engine", "pug");
+```
+
+Ahora vamos a crear una carpeta que vamos a nombrar **views** y vamos a crear un archivo que voy a nombrarlo como **_nosotros.pug_**
+
+la sintaxis de pug, con el nombre de la etiqueta espacio y el contenido ,y no se usan etiquetas de cierra y para anidar de usan tabulaciones
+
+```css
+h1 Hola
+div
+  p Desde pug
+```
+
+y para imprimir vamos al router y en el .get utilizamos el metodo **render** que espera el nombre de la vista nosotros.pug, esto imprime en el navegador
+
+```js
+router.get("/nosotros", (req, res) => {
+  //render ya espera el nombre de una vista
+  res.render("nosotros");
+});
+```

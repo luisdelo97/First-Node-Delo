@@ -6,9 +6,8 @@ router.get("/", (req, res) => {
   res.send("Inicio");
 });
 router.get("/nosotros", (req, res) => {
-  res.send("Nosotros");
+  //render ya espera el nombre de una vista
+  res.render("nosotros");
 });
-router.get("/contacto", (req, res) => {
-  res.send("Contacto");
-});
+
 export default router;
