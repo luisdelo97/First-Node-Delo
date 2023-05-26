@@ -6,9 +6,13 @@ Empezamos inicializando git y luego vinculamos el repositorio personal
 
 instalamos express como una dependencia de produccion **`npm i express`** Es decir, que si se requiere en el servidor donde vamos a publicar nuestro proyecto
 
-Puede ser que ya se instaló express y si abrimos el **_package.jsom_** ya hizo nota como viven aquí dependencias
+Puede ser que ya se instaló express y si abrimos el **_package.jsom_** ya hizo nota como viven aquí dependencias y tenemos **_express_**.
 
-y tenemos **_express_**.
+```js
+"dependencies": {
+    "express": "^4.18.2"
+  }
+```
 
 También nota cómo nos creó un **_package-lock.json_**. Este archivo usualmente nunca lo debes de modificar
 
@@ -35,15 +39,15 @@ Entonces en el **_package.jsom_** se vera de esta forma:
 
 Después vamos a crear aquí un archivo que voy a nombrar **_index.js_** Este va a ser nuestro archivo sobre el cual vamos a configurar express
 
-En **_index.js_** Se importa el módulo express utilizando `require("express")`. Esto nos permite utilizar las funcionalidades de Express en el código.
+En **_index.js_** se importa el módulo express utilizando `require("express")`. Esto nos permite utilizar las funcionalidades de Express en el código.
 
 Se crea una instancia de la aplicación Express llamada `app` utilizando const `app = express()`. Esta instancia representa nuestro servidor web y nos permite definir rutas y configuraciones.
 
-Se define una variable puerto que obtiene el número de puerto desde la variable de entorno `process.env.PORT`. En este caso, la variable de entorno PORT se utiliza para determinar el puerto en el que se ejecutará el servidor. Si no se encuentra la variable de entorno, se utilizará el puerto 4000 como valor predeterminado.
+Se define una variable `puerto` que obtiene el número de puerto desde la variable de entorno `process.env.PORT`. En este caso, la variable de entorno PORT se utiliza para determinar el puerto en el que se ejecutará el servidor. Si no se encuentra la variable de entorno, se utilizará el puerto 4000 como valor predeterminado.
 
 Se llama al método `.listen()` en la instancia de la aplicación app. Este método inicia el servidor y comienza a escuchar las solicitudes entrantes en el puerto especificado. En este caso, se pasa la variable `puerto` como primer argumento para indicar en qué puerto debe escuchar el servidor.
 
-Dentro de la función de devolución de llamada del método `.listen()`, se muestra un mensaje en la consola indicando que el servidor está funcionando y en qué puerto está escuchando. La plantilla de cadena de texto con `` permite concatenar variables dentro del mensaje.
+Dentro de la función de devolución de llamada del método `.listen()`, se muestra un mensaje en la consola indicando que **"el servidor está funcionando y en qué puerto está escuchando"**.
 
 ```js
 //CommonJa
