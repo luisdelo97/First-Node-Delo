@@ -74,3 +74,59 @@ La propiedad `"scripts"` en el archivo **_package.json_** se utiliza para defini
 `"dev"` es el nombre del script personalizado que hemos creado. Puede ser cualquier nombre que elijamos.
 
 `"nodemon index.js"` es el comando que se ejecutará cuando se invoque `npm run dev`. En este caso, se está utilizando el paquete nodemon para ejecutar el archivo `index.js`. **_Nodemon_** es una herramienta que reinicia automáticamente la aplicación cuando se detectan cambios en los archivos, lo que es útil durante el desarrollo para evitar tener que reiniciar manualmente el servidor cada vez que se realicen modificaciones.
+
+# habilitando Imports y Exports
+
+requied() Esta es una sintaxis que se le conoce como Common JS, no es propia de JavaScript.
+
+Entonces importamos los modulos con `import express from "express";` y en el **_package.json_** colocamos para usar los modulos
+
+```js
+"type": "module",
+```
+
+invocamos el metodo .get que soporta todos los varbos post patch put delete
+
+con get enviamos una peticion a una url, req: es lo que se envia, res: es lo qie envia se recibe, y dentro los metodos:
+
+send: mostrar algo en pantalla
+
+jsom: envia una respuesta de json entonces en el arg se le pasa un objeto
+
+render: para mostrar una vista
+
+```js
+app.get("/nosotros", (req, res) => {
+  res.send("Nosotros");
+});
+```
+
+# Routing en express
+
+Vamos a crear aquí una carpeta que voy a nombrar como **routes**.Y vamos a crear un archivo llamado **_index.js_**.Aquí estaremos colocando todo lo relacionado a las rutas y de esa forma estaremos utilizando, digamos, la misma instancia de Express pero estamos extendiendo o utilizando su router.
+y desde este ruter manejamos todas las urls, para liego importar a la app
+
+```js
+import express from "express";
+const router = express.Router();
+router.get("/", (req, res) => {
+  res.send("Inicio");
+});
+router.get("/nosotros", (req, res) => {
+  res.send("Nosotros");
+});
+router.get("/contacto", (req, res) => {
+  res.send("Contacto");
+});
+export default router;
+```
+
+---
+
+ahora importamos a la app,luego desde la pagina pruncipal agrega el router con el metodo use que soporta todos los verbos **post, patch ,put, delete**
+
+```js
+import router from "./routes/index.js";
+//agrega el router a la app
+app.use("/", router);
+```

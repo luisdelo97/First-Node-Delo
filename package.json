@@ -10,6 +10,7 @@
     "type": "git",
     "url": "git+https://github.com/luisdelo97/First-Node-Delo.git"
   },
+  "type": "module",
   "author": "Luis Delorenzi",
   "license": "ISC",
   "bugs": {
