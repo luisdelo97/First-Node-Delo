@@ -169,3 +169,26 @@ router.get("/nosotros", (req, res) => {
   res.render("nosotros");
 });
 ```
+
+# Pasar variables hacia las vistas
+
+Declaramos una variable, y como segundo argumento de render pasamos como atributo lo que queremos renderizar
+
+```js
+router.get("/nosotros", (req, res) => {
+  const viaje = "Viaje a Alemania";
+
+  //render ya espera el nombre de una vista
+  res.render("nosotros", {
+    viaje,
+  });
+});
+```
+
+luego pasamos la variable a la vista PUG y para pasar una variable usamos estas sintaxis
+
+```css
+p= viaje
+||
+p #{viaje}
+```
