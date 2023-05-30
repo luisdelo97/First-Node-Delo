@@ -192,3 +192,49 @@ p= viaje
 ||
 p #{viaje}
 ```
+
+# Creando el layout principal o master page
+
+En Pug.js, los "blocks" son estructuras que permiten crear secciones reutilizables de código HTML. Los blocks se utilizan en conjunto con las plantillas en Pug.js para organizar y reutilizar el código de manera eficiente.
+
+Un block se define utilizando la sintaxis block nombre seguido del contenido HTML correspondiente. Por ejemplo: Supongamos que tienes una plantilla base llamada "index.pug" que define la estructura básica de tu página:
+
+```css
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title Document
+  body
+    block contenido
+```
+
+Luego, en otra plantilla llamada "nosotros.pug", puedes extender la plantilla base y personalizar el contenido del bloque "content":
+
+```css
+extends .layout/index
+block contenido
+  h1 Hola
+  p= viaje
+  p #{viaje}
+```
+
+y el resultado final seria:
+
+```css
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title Document
+  body
+    h1 Hola
+    p= viaje
+    p #{viaje}
+```
+
+# Agregamos hojas de estilo y archivos estaticos
+
+Ahora agregamos una carpeta nueva llamada **public** donde se encontraran las imagenes y hojas de estilo
