@@ -8,6 +8,9 @@ const puerto = process.env.PORT || 4000;
 // habilitar pug
 app.set("view engine", "pug");
 
+// definir la carpeta publica
+app.use(express.static("public"));
+
 //agrega el router a la app
 app.use("/", router);
 

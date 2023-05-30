@@ -238,3 +238,20 @@ html(lang="en")
 # Agregamos hojas de estilo y archivos estaticos
 
 Ahora agregamos una carpeta nueva llamada **public** donde se encontraran las imagenes y hojas de estilo
+
+para darle acceso a los archivos estaticos:
+
+```js
+// definir la carpeta publica
+app.use(express.static("public"));
+```
+
+Por ultimo agregamos las hojas de estilo al head del index.pug
+
+```js
+  link(rel="stylesheet", href="/css/bootstrap.css")
+  link(rel="stylesheet", href="/css/style.css")
+  link(rel='preconnect' href='https://fonts.googleapis.com')
+  link(rel='preconnect' href='https://fonts.gstatic.com' crossorigin='')
+  link(href='https://fonts.googleapis.com/css2?family=Covered+By+Your+Grace&family=Staatliches&display=swap' rel='stylesheet')
+```
