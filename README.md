@@ -255,3 +255,20 @@ Por ultimo agregamos las hojas de estilo al head del index.pug
   link(rel='preconnect' href='https://fonts.gstatic.com' crossorigin='')
   link(href='https://fonts.googleapis.com/css2?family=Covered+By+Your+Grace&family=Staatliches&display=swap' rel='stylesheet')
 ```
+
+# Middlewares
+
+Usamos next para pasar al siguiente middleware, return es opcional pata forzar a que pase al siguiente middleware
+
+```js
+//Obtener el año actual
+app.use("/", (req, res, next) => {
+  return next();
+});
+```
+
+los locals son como variables internas de express
+
+```js
+res.locals.nombreVariable = "nombre";
+```
