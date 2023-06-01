@@ -272,3 +272,11 @@ los locals son como variables internas de express
 ```js
 res.locals.nombreVariable = "nombre";
 ```
+
+# Conectamos una base de datos MySql
+
+Primero instalamos mysql, tableplus(todo esto de internet y con tutoriales de youtube) y luego en tableplus importamos el archivo contenido en la carpeta Materiales, el archivo **agenciaviajes.dump**
+
+## Instalar algunas dependencias de produccion
+
+como sequeliza con el comando `npm i mysql2 sequelize`
