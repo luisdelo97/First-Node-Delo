@@ -14,7 +14,7 @@ const paginaNosotros = (req, res) => {
 const paginaViajes = async (req, res) => {
   //consultar db
   const viajes = await Viaje.findAll();
-  console.log(viajes);
+  // console.log(viajes);
 
   res.render("viajes", {
     pagina: "Proximos Viajes",
