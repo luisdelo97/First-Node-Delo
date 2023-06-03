@@ -2,6 +2,9 @@
 import express from "express";
 import router from "./routes/index.js";
 import db from "./config/db.js";
+import dotenv from "dotenv/config";
+
+console.log(process.env.DB_HOST);
 
 const app = express();
 

@@ -1,9 +1,31 @@
 import { Viaje } from "../models/Viaje.js";
 import { Testimonial } from "../models/Testimonial.js";
-const paginaInicio = (req, res) => {
-  res.render("inicio", {
-    pagina: "Inicio",
-  });
+const paginaInicio = async (req, res) => {
+  const promises = [];
+
+  promises.push(
+    Viaje.findAll({
+      limit: 3,
+    })
+  );
+
+  promises.push(
+    Testimonial.findAll({
+      limit: 3,
+    })
+  );
+  try {
+    const resultado = await Promise.all(promises);
+
+    res.render("inicio", {
+      pagina: "Inicio",
+      clase: "home",
+      viajes: resultado[0],
+      testimoniales: resultado[1],
+    });
+  } catch (error) {
+    console.log(error);
+  }
 };
 
 const paginaNosotros = (req, res) => {
