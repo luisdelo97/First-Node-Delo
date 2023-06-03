@@ -16,7 +16,7 @@ const guardarTestimoniales = async (req, res) => {
 
   // revisar por erroes
   if (errores.length > 0) {
-    // const testimoniales = await Testimonial.findAll();
+    const testimoniales = await Testimonial.findAll();
 
     // muestra la vista con errores
     res.render("testimoniales", {
@@ -24,7 +24,7 @@ const guardarTestimoniales = async (req, res) => {
       nombre,
       correo,
       mensaje,
-      // testimoniales,
+      testimoniales,
       pagina: "Testimoniales",
     });
   } else {
